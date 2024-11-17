@@ -1,124 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
-// Define planet data
-const planets = [
-  {
-    id: 'mercury',
-    name: 'Mercury',
-    size: 20,
-    orbitSize: 180,
-    duration: 8,
-    delay: 0,
-    imagePath: '/planets/mercury.jpg',
-  },
-  {
-    id: 'venus',
-    name: 'Venus',
-    size: 28,
-    orbitSize: 280,
-    duration: 12,
-    delay: 1,
-    imagePath: '/planets/venus.jpg',
-  },
-  {
-    id: 'earth',
-    name: 'Earth',
-    size: 30,
-    orbitSize: 360,
-    duration: 15,
-    delay: 2,
-    imagePath: '/planets/earth.jpg',
-  },
-  {
-    id: 'mars',
-    name: 'Mars',
-    size: 24,
-    orbitSize: 440,
-    duration: 18,
-    delay: 3,
-    imagePath: '/planets/mars.jpg',
-  },
-  {
-    id: 'jupiter',
-    name: 'Jupiter',
-    size: 60,
-    orbitSize: 560,
-    duration: 22,
-    delay: 4,
-    imagePath: '/planets/jupiter.jpg',
-  },
-  {
-    id: 'saturn',
-    name: 'Saturn',
-    size: 50,
-    orbitSize: 680,
-    duration: 26,
-    delay: 5,
-    imagePath: '/planets/saturn.jpg',
-  },
-];
-
-const Planet = ({ planet }: { planet: typeof planets[0] }) => {
-  return (
-    <motion.div
-      className="absolute"
-      style={{
-        width: planet.orbitSize,
-        height: planet.orbitSize,
-        top: `calc(50% - ${planet.orbitSize / 2}px)`,
-        left: `calc(50% - ${planet.orbitSize / 2}px)`,
-      }}
-      animate={{
-        rotate: 360,
-      }}
-      transition={{
-        duration: planet.duration,
-        delay: planet.delay,
-        repeat: Infinity,
-        ease: "linear",
-      }}
-    >
-      {/* Orbit Path */}
-      <div 
-        className="absolute inset-0 rounded-full border border-white/10"
-        style={{
-          animation: `pulse 4s ${planet.delay}s infinite`,
-        }}
-      />
-      
-      {/* Planet */}
-      <motion.div
-        className="absolute"
-        style={{
-          width: planet.size,
-          height: planet.size,
-          top: 0,
-          left: `calc(50% - ${planet.size / 2}px)`,
-        }}
-        animate={{
-          rotate: 360,
-        }}
-        transition={{
-          duration: planet.duration / 2,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-      >
-        <Image
-          src={planet.imagePath}
-          alt={planet.name}
-          width={planet.size}
-          height={planet.size}
-          className="rounded-full"
-        />
-      </motion.div>
-    </motion.div>
-  );
-};
 
 const ShootingStar = ({ delay }: { delay: number }) => (
   <motion.div
@@ -173,11 +57,6 @@ const Background = () => {
       {stars.map((star) => (
         <ShootingStar key={star.id} delay={star.delay} />
       ))}
-
-  
-
-      {/* Gradient overlay */}
-      
     </div>
   );
 };

@@ -32,7 +32,7 @@ const Contact = () => {
         throw new Error('Failed to send message');
       }
     } catch (err) {
-      setError('Failed to send message. Please try again.');
+      setError(`Failed to send message. Please try again.${err}`) 
     } finally {
       setLoading(false);
     }

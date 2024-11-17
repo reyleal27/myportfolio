@@ -3,7 +3,7 @@ import React from "react";
 import { Backend_skill, Frontend_skill, tools } from "../constants/skills";
 import SkillDataProvider from "../sub/SkillDataProvider";
 import { motion } from 'framer-motion';
-import { slideInFromLeft, slideInFromRight, slideInFromTop } from "@/utils/motion";
+import { slideInFromLeft, slideInFromRight} from "@/utils/motion";
 
 const Skills = () => {
   return (

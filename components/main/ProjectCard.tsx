@@ -64,7 +64,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         <div className="border-t border-gray-800 pt-4">
           <h4 className="text-sm font-semibold mb-2 text-purple-500">Technologies Used:</h4>
           <div className="flex flex-wrap gap-3">
-            {project.technologies.map((tech: any) => (
+            {project.technologies.map((tech) => (
               <div 
                 key={tech.name}
                 className="flex items-center gap-1 text-slate-300 hover:text-purple-300 transition-colors"

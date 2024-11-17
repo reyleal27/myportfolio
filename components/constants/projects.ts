@@ -1,6 +1,6 @@
-import { FaGithub, FaExternalLinkAlt, FaReact, FaNodeJs, FaDatabase } from 'react-icons/fa';
-import { SiNextdotjs, SiSocketdotio, SiFirebase, SiMongodb, SiTailwindcss, SiReact, SiAxios, SiCss3, SiVercel, SiJsonwebtokens, SiGoogleauthenticator, SiSass, SiRender, SiRedux } from 'react-icons/si';
-import { Project, ProjectCardProps } from '../types/types';
+import {  FaReact, FaNodeJs,} from 'react-icons/fa';
+import {  SiSocketdotio, SiMongodb, SiTailwindcss, SiReact, SiAxios, SiCss3, SiVercel, SiJsonwebtokens, SiGoogleauthenticator, SiSass, SiRender, SiRedux } from 'react-icons/si';
+import { Project } from '../types/types';
 
 
 export const projects:Project[] = [
