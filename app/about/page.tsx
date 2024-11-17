@@ -7,7 +7,7 @@ import Link from 'next/link';
 const AboutPage = () => {
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = '/Resume-rey-leal.pdf'; 
+    link.href = '/rey-resume.pdf'; 
     link.download = 'resume.pdf';
     link.click();
   };
