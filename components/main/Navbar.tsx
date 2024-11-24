@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { FaLinkedin } from 'react-icons/fa';
 import { FaGithubSquare } from "react-icons/fa";
+import VersionSwitcher from '../sub/VersionSwitcher';
 const socials = [
     {
         title: "linkedin",
@@ -41,7 +42,8 @@ const Navbar = () => {
               </div>
               
                 <div className="md:flex gap-3 items-center hidden justify-center mt-4">
-            {socials.map((item, index) => (
+          <VersionSwitcher/>  
+          {socials.map((item, index) => (
               <Link href={item.href} key={index} className="text-white text-4xl hover:text-purple-600 rounded-full" target='_blank'  rel="noopener noreferrer">
                 {item.icon}
               </Link>
@@ -81,4 +83,4 @@ const Navbar = () => {
   )
 }
 
-export default  Navbar
+export default Navbar;

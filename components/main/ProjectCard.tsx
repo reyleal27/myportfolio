@@ -50,7 +50,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         <p className="text-slate-200 mb-4">{project.description}</p>
 
         <div className="mb-4">
-          <h4 className="text-sm font-semibold mb-2 text-purple-500">Key Features:</h4>
+          <h4 className="font-semibold mb-2 text-purple-500">Key Features:</h4>
           <ul className="text-slate-200 text-sm space-y-1">
             {project.features.map((feature: string) => (
               <li key={feature} className="flex items-center gap-2">
@@ -62,7 +62,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         </div>
 
         <div className="border-t border-gray-800 pt-4">
-          <h4 className="text-sm font-semibold mb-2 text-purple-500">Technologies Used:</h4>
+          <h4 className="font-semibold mb-2 text-purple-500">Technologies Used:</h4>
           <div className="flex flex-wrap gap-3">
             {project.technologies.map((tech) => (
               <div 
@@ -73,6 +73,29 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                 <span className="text-sm">{tech.name}</span>
               </div>
             ))}
+             <div className="flex gap-4 pt-5">
+                  <motion.a
+                    whileHover={{ scale: 1.10 }}
+                    whileTap={{ scale: 0.95 }}
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-[#2d2d2d] rounded-lg text-slate-200 hover:bg-[#3d3d3d] transition-colors"
+                    >
+                    GitHub
+                  </motion.a>
+                  <motion.a
+                    whileHover={{ scale: 1.10 }}
+                    whileTap={{ scale: 0.95 }}
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors"
+                    >
+                    Live Demo
+                  </motion.a>
+                </div>
+                   
           </div>
         </div>
       </div>

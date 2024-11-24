@@ -1,8 +1,8 @@
+
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "@/components/main/Navbar";
-import Background from "@/components/main/Background";
+import { LayoutProvider } from "@/components/context/LayoutContex";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,14 +25,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#030014] overflow-y-scroll overflow-x-hidden`}
       >
-        <Navbar />
-         <Background/>
-        {children}
+        <LayoutProvider>
+          {children}
+          
+        </LayoutProvider>
       </body>
     </html>
   );

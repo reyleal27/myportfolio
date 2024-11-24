@@ -3,11 +3,23 @@
 import { projects } from '@/components/constants/projects';
 import ProjectCard from '../../components/main/ProjectCard';
 import { motion } from 'framer-motion';
+import Navbar from '@/components/main/Navbar';
+import { useLayoutContext } from '@/components/context/LayoutContex';
+import { useEffect } from 'react';
+import { useRouter } from "next/navigation";
 
+const ProjectsPage: React.FC = () => {
+  const { version } = useLayoutContext();
+  const router = useRouter();
 
-const ProjectsPage:React.FC = () => {
+  useEffect(() => {
+    if (version === "v2") {
+      router.push("/"); // Redirect to homepage for version 2
+    }
+  }, [version, router]);
   return (
     <div className="min-h-screen w-full py-20 px-4">
+      <Navbar/>
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
