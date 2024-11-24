@@ -20,13 +20,11 @@ export default function Home() {
   const { version } = useLayoutContext();
 const router = useRouter();
 
-  // useEffect to handle version redirection
   useEffect(() => {
     if (version === "v2") {
-      // Redirect to the home page when version is 'v2'
-      router.push("/"); // Redirects to the main page ("/")
+      router.push("/"); 
     }
-  }, [version, router]); // Runs when `version` changes
+  }, [version, router]);
 
   const renderVersion = () => {
     switch (version) {

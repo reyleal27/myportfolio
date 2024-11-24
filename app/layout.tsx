@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { LayoutProvider } from "@/components/context/LayoutContex";
+import Head from "next/head";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -16,9 +17,11 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "My portfolio",
-  description: "Welcome to my personal portfolio! I am a passionate and skilled Web Developer, Full-Stack Developer, with a strong foundation in creating modern, responsive, and user-friendly websites. This portfolio showcases my skills, experience, and the projects I've worked on. Here, you can explore my technical expertise in web development, design, and digital solutions that empower businesses and individuals to succeed online.",
-};
+  title: "Portfolio of Rey Vincent Leal - Web Developer & Full-Stack Developer",
+  description: "Explore the personal portfolio of Rey Vincent Leal, a passionate and skilled Web Developer and Full-Stack Developer. Discover modern, responsive, and user-friendly websites, showcasing a strong foundation in web development, design, and digital solutions that empower businesses and individuals to succeed online.",
+  keywords: "Web Developer, Full-Stack Developer, Portfolio, Responsive Websites, User-Friendly Websites, Web Development, Design, Digital Solutions",
+  robots: "index, follow",
+}
 
 export default function RootLayout({
   children,
@@ -29,6 +32,9 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+     <Head>
+        <link rel="icon" href="/dev.png" sizes="any" />
+      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#030014] overflow-y-scroll overflow-x-hidden`}
       >

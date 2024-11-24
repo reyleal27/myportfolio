@@ -7,6 +7,7 @@ import Navbar from '@/components/main/Navbar';
 import { useLayoutContext } from '@/components/context/LayoutContex';
 import { useEffect } from 'react';
 import { useRouter } from "next/navigation";
+import Background from '@/components/main/Background';
 
 const ProjectsPage: React.FC = () => {
   const { version } = useLayoutContext();
@@ -14,11 +15,12 @@ const ProjectsPage: React.FC = () => {
 
   useEffect(() => {
     if (version === "v2") {
-      router.push("/"); // Redirect to homepage for version 2
+      router.push("/"); 
     }
   }, [version, router]);
   return (
     <div className="min-h-screen w-full py-20 px-4">
+      <Background/>
       <Navbar/>
       <div className="max-w-7xl mx-auto">
         <motion.div

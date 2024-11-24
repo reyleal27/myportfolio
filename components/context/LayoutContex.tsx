@@ -3,16 +3,14 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-// Define the context type
 interface LayoutContextType {
   version: "v1" | "v2";
   setVersion: (version: "v1" | "v2") => void;
 }
 
-// Create the LayoutContext
+
 const LayoutContext = createContext<LayoutContextType | undefined>(undefined);
 
-// Export a hook for accessing the context
 export const useLayoutContext = () => {
   const context = useContext(LayoutContext);
   if (!context) {
@@ -21,21 +19,21 @@ export const useLayoutContext = () => {
   return context;
 };
 
-// LayoutProvider Component
+
 export const LayoutProvider = ({ children }: { children: React.ReactNode }) => {
   const [version, setVersion] = useState<"v1" | "v2">("v1");
   const router = useRouter();
 
   useEffect(() => {
-    // Get the version from the URL query parameter or localStorage
+
     const params = new URLSearchParams(window.location.search);
     const queryVersion = params.get("version") as "v1" | "v2" | null;
     const storedVersion = localStorage.getItem("version") as "v1" | "v2" | null;
 
     if (queryVersion) {
-      setVersion(queryVersion); // Prioritize URL parameter
+      setVersion(queryVersion); 
     } else if (storedVersion) {
-      setVersion(storedVersion); // Fallback to localStorage
+      setVersion(storedVersion);
     }
   }, []);
 

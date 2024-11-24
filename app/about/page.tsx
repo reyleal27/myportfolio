@@ -1,5 +1,6 @@
 'use client'
 import { useLayoutContext } from '@/components/context/LayoutContex';
+import Background from '@/components/main/Background';
 import Navbar from '@/components/main/Navbar';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -13,7 +14,7 @@ const AboutPage = () => {
 
   useEffect(() => {
     if (version === "v2") {
-      router.push("/"); // Redirect to homepage for version 2
+      router.push("/"); 
     }
   }, [version, router]);
 
@@ -26,6 +27,7 @@ const AboutPage = () => {
 
   return (
     <div className="min-h-screen w-full py-20 px-4">
+      <Background/>
       <Navbar/>
       <div className="max-w-6xl mx-auto">
         {/* Hero Section */}
